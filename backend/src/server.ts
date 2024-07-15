@@ -22,8 +22,8 @@ mongoose.connect(MONGODB_URI, {});
 
 const db = mongoose.connection;
 
-// const STOCK_PULL_INTERVAL = parseInt(`${process.env.STOCK_PULL_INTERVAL}`)*1000 || 5*60*1000;
-const STOCK_PULL_INTERVAL = 15*60*1000;
+const STOCK_PULL_INTERVAL = parseInt(`${process.env.STOCK_PULL_INTERVAL}`)*1000 || 5*60*1000;
+// const STOCK_PULL_INTERVAL = 15*60*1000;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
